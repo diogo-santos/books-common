@@ -30,4 +30,34 @@ class DateUtilsTests {
 		LocalDate expected = LocalDate.of(2020, 12, 31);
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	void givenInvalidDateFormat_WhenConvertYearOrDateTest() {
+		// Given
+		String year = "20/20/2000";
+		// When
+		Exception exception = assertThrows(IllegalArgumentException.class, () ->
+			DateUtils.convertYearOrDate(year)
+		);
+		// Then
+		String expectedMessage = "Invalid date or year: 20/20/2000. It should be a year (yyyy) or date (yyyy-MM-dd) format";
+		String actualMessage = exception.getMessage();
+
+		assertEquals(actualMessage, expectedMessage);
+	}
+
+	@Test
+	void givenInvalidDate_WhenConvertYearOrDateTest() {
+		// Given
+		String year = "any string";
+		// When
+		Exception exception = assertThrows(IllegalArgumentException.class, () ->
+				DateUtils.convertYearOrDate(year)
+		);
+		// Then
+		String expectedMessage = "Invalid date or year: any string. It should be a year (yyyy) or date (yyyy-MM-dd) format";
+		String actualMessage = exception.getMessage();
+
+		assertEquals(actualMessage, expectedMessage);
+	}
 }
