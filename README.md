@@ -16,3 +16,14 @@ Execute tests
 ```
 mvn test
 ```
+
+## Import the library in your project
+Add the dependency in your pom.xml
+```
+<dependency>
+    <groupId>com.book.utils</groupId>
+    <artifactId>books-common</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+</dependency>
+```
+
