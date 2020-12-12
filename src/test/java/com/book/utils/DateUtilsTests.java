@@ -60,4 +60,19 @@ class DateUtilsTests {
 
 		assertEquals(actualMessage, expectedMessage);
 	}
+
+	@Test
+	void givenInvalidYear_WhenConvertYearOrDateTest() {
+		// Given
+		String year = "19";
+		// When
+		Exception exception = assertThrows(IllegalArgumentException.class, () ->
+				DateUtils.convertYearOrDate(year)
+		);
+		// Then
+		String expectedMessage = "Invalid date or year: 19. It should be a year (yyyy) or date (yyyy-MM-dd) format";
+		String actualMessage = exception.getMessage();
+
+		assertEquals(actualMessage, expectedMessage);
+	}
 }
