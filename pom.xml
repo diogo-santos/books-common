@@ -8,11 +8,15 @@
 		<version>2.2.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.book.utils</groupId>
 	<artifactId>books-common</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>books-common</name>
+	<packaging>jar</packaging>
+
+	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Utils library for books API</description>
+	<url>http://maven.apache.org</url>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -31,9 +35,16 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.11</version>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/octocat/hello-world</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
