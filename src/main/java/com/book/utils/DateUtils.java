@@ -17,19 +17,19 @@ public class DateUtils {
      * @throws IllegalArgumentException In case dateOrYearStr is not valid
      */
     public static LocalDate convertYearOrDate(String yearOrDateStr) {
-        LocalDate publishedDate = null;
+        LocalDate localDate = null;
         if (StringUtils.isNotBlank(yearOrDateStr)) {
             try {
                 if (yearOrDateStr.length() == 4) {
-                    publishedDate = LocalDate.of(Integer.parseInt(yearOrDateStr), 1, 1);
-                } else if (yearOrDateStr.length() == 10) {
-                    publishedDate = LocalDate.parse(yearOrDateStr, DateTimeFormatter.ofPattern(DATE_FORMAT));
+                    localDate = LocalDate.of(Integer.parseInt(yearOrDateStr), 1, 1);
+                } else {
+                    localDate = LocalDate.parse(yearOrDateStr, DateTimeFormatter.ofPattern(DATE_FORMAT));
                 }
             } catch (Exception e) {
                 throw new IllegalArgumentException(String.format("Invalid date or year: %s. It should be a year (yyyy) or date (%s) format",
                         yearOrDateStr, DATE_FORMAT), e);
             }
         }
-        return publishedDate;
+        return localDate;
     }
 }
