@@ -30,19 +30,17 @@ Add the dependency in your pom.xml
 Or if you prefer without install the package locally you can get it from jitpack:
 
 ```
-    <dependencies>
-		<dependency>
-			<groupId>com.github.diogo-santos</groupId>
-			<artifactId>books-common</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-    </dependencies>
+<dependency>
+    <groupId>com.github.diogo-santos</groupId>
+    <artifactId>books-common</artifactId>
+    <version>0.0.1</version>
+</dependency>
 
-	<repositories>
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
 ```
 
